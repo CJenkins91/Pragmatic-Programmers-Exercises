@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class exercise11 {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        double amountTo;
+        double amountFrom;
+        double rateTo = 111.70;
+        double rateFrom;
+
+        System.out.println("how many euros are you exchanging? ");
+        amountFrom = in.nextInt();
+        
+        System.out.println("what is the exchange rate? ");
+        rateFrom = in.nextInt();
+
+        amountTo = amountFrom * rateFrom / rateTo;
+
+        System.out.println(amountFrom + " euros at an exchange rate of " + rateFrom + 
+                                                " is " + amountTo + " U.S. dollars");
+        
+    }
+}

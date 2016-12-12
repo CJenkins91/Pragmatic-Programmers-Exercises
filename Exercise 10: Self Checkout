@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class exercise10 {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        ArrayList<Integer> price = new ArrayList<Integer>();
+        ArrayList<Integer> quantity = new ArrayList<Integer>();
+
+        boolean enteringProducts = true;
+        int itemNo = 0;
+        
+        while(enteringProducts)
+        {
+        	int i = 0;
+        	
+        	itemNo++;
+        	
+            System.out.println("Enter the price of item " + itemNo + ":");
+            price.add(i, in.nextInt());
+
+            System.out.println("Enter the quantity of item " + itemNo + ":");
+            quantity.add(i, in.nextInt());
+            
+             if (price.get(i) == 0 && quantity.get(i) == 0){
+              enteringProducts = false;
+        	 }
+             
+            i++;
+
+        }
+
+        int listSize = price.size();
+        double subtotal = 0;
+
+
+        for (int i = 1; i < listSize - 1; i++) {
+            int value = price.get(i) * quantity.get(i);
+
+            subtotal += value;
+        }
+
+        double tax = subtotal / 100 * 5.5;
+
+        double total = subtotal + tax;
+
+        System.out.println("Subtotal: $" + subtotal);
+
+        System.out.println("Tax: $" + tax);
+
+        System.out.println("Total: $" + total);
+    }
+}

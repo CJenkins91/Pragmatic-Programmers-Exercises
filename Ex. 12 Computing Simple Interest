@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class exercise12 {
+
+    public static void main(String[] args){
+
+        Scanner in = new Scanner(System.in);
+
+        double principle = 0;
+        
+        double amount = 0;
+
+        double rateOfInterest = 0;
+
+        int noOfYears = 0;
+
+        System.out.print("enter the principal: ");
+        principle = in.nextDouble();
+        System.out.print("enter the rate of interest: ");
+        rateOfInterest = in.nextDouble();
+        System.out.print("enter the number of years: ");
+        noOfYears = in.nextInt();
+        
+        amount = principle;
+
+        double increment = principle / 100 * rateOfInterest;
+
+        for(int i = 1; i <= noOfYears; i++){
+        
+            amount += increment;
+            System.out.print("The amount at the end of year " + i + " is " + amount + "\n");
+        }
+
+        System.out.print("After " + noOfYears + " at " + rateOfInterest +"%, the investment will be worth $" + amount);
+
+    }
+}
